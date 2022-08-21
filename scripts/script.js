@@ -29,38 +29,77 @@ function addSelectedList(id){
   element.innerText = getTextById(id).textContent;
   selectedList.appendChild(element);
 }
+ 
+// function limitationAlert(){
+//   if(selectedList.childElementCount === 0){
+//     alert("Oooops! You can't select more!");
+//   } 
+//   console.log(selectedList.childElementCount)
+// }
+
+// Singer's Button listener 
 btnJustin.addEventListener("click",function(){
-  addSelectedList("name-justin");
-  setBtnDisable(btnJustin);
+  if(selectedList.childElementCount < 5){
+    addSelectedList("name-justin");
+    setBtnDisable(btnJustin);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
+  // limitationAlert();
+    // addSelectedList("name-justin");
+    // setBtnDisable(btnJustin);
 })
 btnChirlie.addEventListener("click",function(){
-  addSelectedList("name-chirlie");
-  setBtnDisable(btnChirlie);
+  if(selectedList.childElementCount < 5){
+    addSelectedList("name-chirlie");
+    setBtnDisable(btnChirlie);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
 })
 btnAriana.addEventListener("click",function(){
-  addSelectedList("name-ariana");
-  setBtnDisable(btnChirlie);
+  if(selectedList.childElementCount < 5){
+    addSelectedList("name-ariana");
+    setBtnDisable(btnAriana);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
 })
 btnDrake.addEventListener("click",function(){
-  addSelectedList("name-drake");
-  btnJustin.setAttribute("disabled", true);
-  btnJustin.style.backgroundColor = "gray";
+  if(selectedList.childElementCount < 5){
+    addSelectedList("name-drake");
+    setBtnDisable(btnDrake);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
 })
 btnEdSheeran.addEventListener("click",function(){
-  addSelectedList("name-edsheeran");
-  btnJustin.setAttribute("disabled", true);
-  btnJustin.style.backgroundColor = "gray";
+  if(selectedList.childElementCount < 5){
+    addSelectedList("name-edsheeran");
+    setBtnDisable(btnEdSheeran);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
 })
 btnShawn.addEventListener("click",function(){
-  addSelectedList("name-shawn");
+  if(selectedList.childElementCount < 5){
+    addSelectedList("name-shawn");
+    setBtnDisable(btnShawn);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
 })
+// End Singer's Button listener 
 
+
+// Calculate Button
 calculateBtn.addEventListener("click",function(){
   const perSingerValue = getValueFromInput("per-singer-value");
   const totalExpenses = perSingerValue * selectedList.childElementCount;
   addExpenses.textContent = "$" + totalExpenses;
 })
 
+// Calculate Total Button
 calculateTotalBtn.addEventListener("click",function(){
   const perSingerValue = getValueFromInput("per-singer-value");
   const managerValue = getValueFromInput("manager-value");
