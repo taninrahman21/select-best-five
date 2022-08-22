@@ -6,16 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>World's Top Five Singer's</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body class="bg-orange-100">
   <!-- Start Header Section -->
-  <header class="bg-red-400">
-   <section class="flex flex-row  justify-center">
-    <div class="m-0">
-      <img class="" src="images/jbheader.png" alt="justin">
-    </div>
+  <header>
+   <section class="flex h-80 items-center justify-center bg-gray-400">
     <div class="text-center">
-      <h1 class="text-5xl font-semibold font-mono">World's Top Five Singer's</h1>
+      <h1 class="text-5xl font-semibold font-mono uppercase">World's <span>Top</span> Five Singer's</h1>
       <p>Here you can choose your favorite singer's as you like.So choose your favorite five.</p>
     </div>
    </section>
@@ -24,40 +22,40 @@
 
   <main class="w-3/4 mx-auto mt-10">
 
-   <section class="flex flex-row gap-10">
+   <section class="flex flex-col sm:flex-row justify-center items-center md:items-start gap-10">
  <!--start Singer's section -->
-    <div class="grid grid-cols-3 gap-6 w-10/12">
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 w-10/12">
    <div class="text-center border-2 pb-2">
     <img class="w-full mx-auto" src="images/jb.jfif" alt="justin bieber">
     <h1 id="name-justin" class="text-3xl">Justin Bieber</h1>
     <p>Canadian Singer</p>
     <button id="btn-justin" class="bg-blue-400 py-1 px-14 text-lg font-medium text-white">Select</button>
    </div>
-   <div class="text-center border-2 h-auto pb-2">
+   <div class="text-center border-2 pb-2">
     <img class="w-full mx-auto" src="images/chirlie.jpg" alt="chirlie puth">
     <h1 id="name-chirlie" class="text-3xl">Chirlie Puth</h1>
     <p>USA Singer</p>
     <button id="btn-chirlie" class="bg-blue-400 py-1 px-14 text-lg font-medium text-white">Select</button>
    </div>
-   <div class="text-center border-2 h-auto pb-2">
-    <img class="w-full mx-auto" src="images/jb.jfif" alt="ariana grande">
+   <div class="text-center border-2 pb-2">
+    <img class="w-full mx-auto" src="images/ariana.jpg" alt="ariana grande">
     <h1 id="name-ariana" class="text-3xl">Ariana Grande</h1>
     <p>American Singer</p>
     <button id="btn-ariana" class="bg-blue-400 py-1 px-14 text-lg font-medium text-white">Select</button>
    </div>
-   <div class="text-center border-2 h-auto pb-2">
+   <div class="text-center border-2 pb-2">
     <img class="w-full mx-auto" src="images/drake.webp" alt="drake">
     <h1 id="name-drake" class="text-3xl">Drake</h1>
     <p>American Singer</p>
     <button id="btn-drake" class="bg-blue-400 py-1 px-14 text-lg font-medium text-white">Select</button>
    </div>
-   <div class="text-center border-2 h-auto pb-2">
+   <div class="text-center border-2 pb-2">
     <img class="w-full mx-auto" src="images/edsheeran.webp" alt="ed sheeran">
     <h1 id="name-edsheeran" class="text-3xl">Ed Sheeran</h1>
     <p>American Singer</p>
     <button id="btn-edsheeran" class="bg-blue-400 py-1 px-14 text-lg font-medium text-white">Select</button>
    </div>
-   <div class="text-center border-2 h-auto pb-2">
+   <div class="text-center border-2 pb-2">
     <img class="w-full mx-auto" src="images/shawn.jfif" alt="shawn mendes">
     <h1 id="name-shawn" class="text-3xl">Shawn Mendes</h1>
     <p>Canadian Singer</p>
