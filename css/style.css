@@ -1,7 +1,9 @@
 
-/* .header-img{
-  height: 550px;
-} */
+.header-img{
+  width: 300px;
+  margin-bottom: 53px;
+}
+
 /* .header-img::before{
   content: "";
 } */
