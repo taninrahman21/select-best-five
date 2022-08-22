@@ -18,76 +18,42 @@ function getValueFromInput(id){
 }
 function getTextById(id){
   const name = document.getElementById(id);
-  return name
+  return name;
 }
-function setBtnDisable(btn){
-  btn.setAttribute("disabled", true);
-  btn.style.backgroundColor = "gray";
-}
-function addSelectedList(id){
+function addSelectedList(id,btn){
   const element = document.createElement("li");
   element.innerText = getTextById(id).textContent;
   selectedList.appendChild(element);
+  btn.setAttribute("disabled", true);
+  btn.style.backgroundColor = "gray";
 }
  
-// function limitationAlert(){
-//   if(selectedList.childElementCount === 0){
-//     alert("Oooops! You can't select more!");
-//   } 
-//   console.log(selectedList.childElementCount)
-// }
+function setSelectedListWithLimitation(id,btn){
+  if(selectedList.childElementCount < 5){
+    addSelectedList(id,btn);
+  } else {
+    alert("Oooops! You can't select more!");
+  }
+}
 
 // Singer's Button listener 
 btnJustin.addEventListener("click",function(){
-  if(selectedList.childElementCount < 5){
-    addSelectedList("name-justin");
-    setBtnDisable(btnJustin);
-  } else {
-    alert("Oooops! You can't select more!");
-  }
-  // limitationAlert();
-    // addSelectedList("name-justin");
-    // setBtnDisable(btnJustin);
+setSelectedListWithLimitation("name-justin",btnJustin);
 })
 btnChirlie.addEventListener("click",function(){
-  if(selectedList.childElementCount < 5){
-    addSelectedList("name-chirlie");
-    setBtnDisable(btnChirlie);
-  } else {
-    alert("Oooops! You can't select more!");
-  }
+  setSelectedListWithLimitation("name-chirlie",btnChirlie);
 })
 btnAriana.addEventListener("click",function(){
-  if(selectedList.childElementCount < 5){
-    addSelectedList("name-ariana");
-    setBtnDisable(btnAriana);
-  } else {
-    alert("Oooops! You can't select more!");
-  }
+  setSelectedListWithLimitation("name-ariana",btnAriana);
 })
 btnDrake.addEventListener("click",function(){
-  if(selectedList.childElementCount < 5){
-    addSelectedList("name-drake");
-    setBtnDisable(btnDrake);
-  } else {
-    alert("Oooops! You can't select more!");
-  }
+  setSelectedListWithLimitation("name-drake",btnDrake);
 })
 btnEdSheeran.addEventListener("click",function(){
-  if(selectedList.childElementCount < 5){
-    addSelectedList("name-edsheeran");
-    setBtnDisable(btnEdSheeran);
-  } else {
-    alert("Oooops! You can't select more!");
-  }
+  setSelectedListWithLimitation("name-edsheeran",btnEdSheeran);
 })
 btnShawn.addEventListener("click",function(){
-  if(selectedList.childElementCount < 5){
-    addSelectedList("name-shawn");
-    setBtnDisable(btnShawn);
-  } else {
-    alert("Oooops! You can't select more!");
-  }
+  setSelectedListWithLimitation("name-shawn",btnShawn);
 })
 // End Singer's Button listener 
 
@@ -95,6 +61,9 @@ btnShawn.addEventListener("click",function(){
 // Calculate Button
 calculateBtn.addEventListener("click",function(){
   const perSingerValue = getValueFromInput("per-singer-value");
+  if(isNaN(perSingerValue)){
+    return alert("Provide a Number, Please!")
+  }
   const totalExpenses = perSingerValue * selectedList.childElementCount;
   addExpenses.textContent = "$" + totalExpenses;
 })
@@ -104,6 +73,9 @@ calculateTotalBtn.addEventListener("click",function(){
   const perSingerValue = getValueFromInput("per-singer-value");
   const managerValue = getValueFromInput("manager-value");
   const hostValue = getValueFromInput("host-value");
+  if(isNaN(perSingerValue) || isNaN(managerValue) || isNaN(hostValue)){
+    return alert("Provide a Number, Please!")
+  }
   const totalExpenses = perSingerValue * 5;
   const totalCost = totalExpenses + managerValue + hostValue;
   addTotal.textContent = "$" + totalCost;
