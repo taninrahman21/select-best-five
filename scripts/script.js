@@ -76,7 +76,7 @@ calculateTotalBtn.addEventListener("click",function(){
   if(isNaN(perSingerValue) || isNaN(managerValue) || isNaN(hostValue)){
     return alert("Provide a Number, Please!")
   }
-  const totalExpenses = perSingerValue * 5;
+  const totalExpenses = perSingerValue * selectedList.childElementCount;
   const totalCost = totalExpenses + managerValue + hostValue;
   addTotal.textContent = "$" + totalCost;
 })
